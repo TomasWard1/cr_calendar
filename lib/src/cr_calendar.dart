@@ -29,7 +29,7 @@ typedef OnSwipeCallback = Function(int year, int month);
 ///
 /// * events - Events that happens on selected day,
 /// * day - [DateTime] instance of selected day.
-typedef OnTapCallback = Function(List<dynamic> events, DateTime day);
+typedef OnTapCallback = Function(List<CalendarEventModel> events, DateTime day);
 
 /// On date range selected callback
 ///
@@ -37,7 +37,7 @@ typedef OnTapCallback = Function(List<dynamic> events, DateTime day);
 /// * begin - [DateTime] instance of range beginning
 /// * end - [DateTime] instance of range ending
 typedef OnRangeSelectedCallback = Function(
-    List<dynamic> events, DateTime? begin, DateTime? end);
+    List<CalendarEventModel> events, DateTime? begin, DateTime? end);
 
 typedef OnDateSelectCallback = Function(DateTime selectedDate);
 
@@ -50,7 +50,7 @@ class CrCalendarController extends ChangeNotifier {
   });
 
   /// All calendar event currently stored by controller.
-  final List<dynamic>? events;
+  final List<CalendarEventModel>? events;
 
   /// Current opened date in calendar.
   late DateTime date;
@@ -64,7 +64,7 @@ class CrCalendarController extends ChangeNotifier {
   DateTime? selectedDate;
 
   /// List of events which are in selected day or selected range.
-  List<dynamic>? selectedEvents;
+  List<CalendarEventModel>? selectedEvents;
 
   /// See [DateRangeModel].
   DateRangeModel selectedRange = DateRangeModel();
@@ -91,13 +91,13 @@ class CrCalendarController extends ChangeNotifier {
   ValueNotifier<bool> get isShowingEvents => _doShowEvents;
 
   /// Add list of events.
-  void addEvents(List<dynamic> events) {
+  void addEvents(List<CalendarEventModel> events) {
     events.addAll(events);
     _redrawCalendar();
   }
 
   /// Add one event.
-  void addEvent(dynamic event) {
+  void addEvent(CalendarEventModel event) {
     events?.add(event);
     _redrawCalendar();
   }
