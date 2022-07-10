@@ -28,7 +28,7 @@ typedef OnSwipeCallback = Function(int year, int month);
 ///
 /// * events - Events that happens on selected day,
 /// * day - [DateTime] instance of selected day.
-typedef OnTapCallback = Function(List<CalendarEventModel> events, DateTime day);
+typedef OnTapCallback = Function(List<FrediItem> events, DateTime day);
 
 /// On date range selected callback
 ///
