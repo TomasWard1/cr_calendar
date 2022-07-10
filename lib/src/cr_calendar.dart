@@ -49,7 +49,7 @@ class CrCalendarController extends ChangeNotifier {
   });
 
   /// All calendar event currently stored by controller.
-  final List<CalendarEventModel>? events;
+  final List<FrediItem>? events;
 
   /// Current opened date in calendar.
   late DateTime date;
