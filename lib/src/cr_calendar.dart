@@ -1,5 +1,4 @@
 import 'package:cr_calendar/src/contract.dart';
-import 'package:cr_calendar/src/item_classes.dart';
 import 'package:cr_calendar/src/customization/builders.dart';
 import 'package:cr_calendar/src/extensions/datetime_ext.dart';
 import 'package:cr_calendar/src/models/calendar_event_model.dart';
